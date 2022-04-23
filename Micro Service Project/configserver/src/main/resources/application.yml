@@ -1,0 +1,62 @@
+
+
+spring:
+  profiles:
+    active: native
+
+  application:
+    name: Config-Server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  #    addresses: localhost
+
+
+
+
+  #For GITHUB
+  #  cloud:
+  #    config:
+  #      server:
+  #        git:
+  #          uri: https://github.com/abubakaar/SpringCloud-ConfigServer
+  #          default-label: main
+  #      enabled: true
+
+
+
+#  cloud:
+#    bus:
+#      enabled: true
+#    config:
+#      server:
+#        git:
+#          uri: file:///${HOME}/Desktop/temp/
+
+  #    refresh:
+  #      additionalPropertySourcesToRetain[0]: Rockiee-abubakar
+
+
+
+#
+  cloud:
+    config:
+      server:
+      #Local configuration: This locations can either of classpath or locations in the filesystem.
+      native:
+      #Reads from a specific filesystem folder
+      search-locations: classpath:/config
+
+
+
+
+server:
+  port: ${port:8881}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"   #refresh busenv bus-refresh

@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: Stock-Service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/SpringConfigCloud
+    username: root
+    password: abc
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
+
+server:
+  port: ${port:8800}
+
+

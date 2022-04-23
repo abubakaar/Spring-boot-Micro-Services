@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: ProductEnquiryService
+  cloud:
+    loadbalancer:
+      ribbon:
+        enable: false
+
+server:
+  port: ${port:8700}
+
+#Stock-Service:
+#  ribbon:
+#    listOfServers: http://localhost:8800, http://localhost:8801

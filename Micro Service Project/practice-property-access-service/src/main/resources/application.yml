@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: Rockiee
+#  profiles:
+#    active: abubakar
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+
+
+
+  config:
+    import: optional:configserver:http://localhost:8881/
+#  cloud:
+#    config:
+#      uri: http://localhost:8881
+
+
+server:
+  port: ${port:8100}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"   #refresh busenv bus-refresh
+
+

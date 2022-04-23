@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: SpringCloudGateway
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+  instance:
+    lease-renewal-interval-in-seconds: 5
+
+
+
+#    gateway:
+#      routes:
+#        - id: stockEnquiry
+#          uri: http://localhost:8700/
+#          predicates:
+#            - Path=/productenquiry/**
+
+
+server:
+  port: ${port:8050}
